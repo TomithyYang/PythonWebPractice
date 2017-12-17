@@ -1,5 +1,5 @@
 import requests
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 import bs4
 
 def getHTMLText(url):
@@ -12,7 +12,7 @@ def getHTMLText(url):
         return ""
 
 def fillUnivList(ulist, html):
-    soup = BeautifulSoup(html, "html.parser")
+    soup = bs4.BeautifulSoup(html, "html.parser")
     for tr in soup.find('tbody').children:
         if isinstance(tr, bs4.element.Tag):
             tds = tr('td')
